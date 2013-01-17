@@ -1,0 +1,17 @@
+Git Basics... 
+
+CHECKOUT:
+git clone git@github.com:qualityshepherd/sahi-example.git sahi-example/
+
+COMMIT:
+git add <filename or *>
+git commit -m "Checking comment..."
+
+OR to get changes:
+git commit -m "Refactor to simplify" -a
+
+INFO:
+http://media.pragprog.com/titles/tsgit/chap-005-extract.html 
+
+STATUS:
+git status
