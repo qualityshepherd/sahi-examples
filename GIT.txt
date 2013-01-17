@@ -17,5 +17,9 @@ git commit -m "Refactor to simplify" -a
 STATUS:
 git status
 
+CONFIG:
+git config -l
+git config remote.origin.url git@github.com:qualityshepherd/sahi-examples.git
+
 MORE INFO:
 http://git.or.cz/course/svn.html
