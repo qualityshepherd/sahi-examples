@@ -3,10 +3,13 @@ Git Basics...
 CHECKOUT:
 git clone git@github.com:qualityshepherd/sahi-example.git sahi-example/
 
-COMMIT:
+COMMIT (LOCAL):
 git init
 git add <filename or .>
 git commit -m "Checking comment..."
+
+PUBLISH (GITHUB):
+git publish .
 
 OR to get changes:
 git commit -m "Refactor to simplify" -a
