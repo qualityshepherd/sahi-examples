@@ -1,0 +1,27 @@
+/** ~sort test... 	**/
+
+_navigateTo("http://www.javascriptkit.com/script/script2/sorttable.shtml");
+
+// initial sort... 
+_click(_link("Name"));
+
+// collect table column elements in an array...
+_set($numRows, _table("table0").rows.length -1);
+var $appSortedValues = new Array();
+for(var $i=0; $i<$numRows; $i++) {
+	$appSortedValues[$i] = _getText(_cell(0, _in(_row($i+1, _in(_table("table0"))))));
+}
+
+// copy array javascript style using slice... 
+var $jsSortedValues = $appSortedValues.slice(0);
+$jsSortedValues.sort(caseInsensitiveSort);
+
+_assertEqual($jsSortedValues, $appSortedValues);
+
+
+// javascript's sort is case sensitive so we "fix" that thusly...
+function caseInsensitiveSort(a, b) {
+	if (a.toLowerCase() < b.toLowerCase()) return -1;
+    if (a.toLowerCase() > b.toLowerCase()) return 1;
+    return 0;
+}
