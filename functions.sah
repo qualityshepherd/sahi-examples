@@ -1,0 +1,33 @@
+/*
+	functions.sah
+*/
+
+// click a random email link and return it's URL... 
+function clickRandomEmailLink() {
+	var $numDisplayedEmails = _count("_image", "messagestatus0.gif"); 
+	
+	if($numDisplayedEmails > 0) {
+		var $randNum = _random($numDisplayedEmails-1); // zero base... 
+
+		_click(_link($randNum, _under(_cell("Subject", _in(_table("Table1"))))));
+
+		// use _set to get and set a var with value from the browser... 
+		_set($currentURL, location.href);
+
+		return $currentURL;
+
+	} else {
+		_logExceptionAsFailure("No emails found...");
+	}
+}
+
+
+function checkEmailAccount($accountName) {
+	_setValue(_textbox(0), $accountName);
+	_click(_submit("Get Email"));
+}
+
+
+function deleteEmail() {
+	_click(_submit("Delete Me"));
+}

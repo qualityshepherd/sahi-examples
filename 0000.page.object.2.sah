@@ -1,0 +1,54 @@
+// page object... 
+var GoogleHome = {
+	$url : "http://google.com",
+	$textbox : "q",
+	$submitButton : "Google Search",
+	$title : "Google",
+
+	visit : function() {
+		$this = this;
+		_navigateTo($this.$url);
+		$this.isPage(); // verify we're on the right page...
+	},
+	isPage : function() {
+		_assertEqual($this.$title, _title());
+	},
+	searchFor : function($searchText) {
+		$this = this;
+		_setValue(_textbox($this.$textbox), $searchText);
+		_click(_submit($this.$submitButton));
+	}
+};
+
+// results page object... 
+var GoogleResults = {
+	$title : new RegExp(".*Google"),
+	$filterBy : new SearchFilter, // include common page elements...
+
+	isPage : function() {
+		$this = this;
+		_assertEqual($this.$title, _title());
+	},
+	getFirstResult : function() {
+		_alert(_getText(_link(0, _in(_div("ires")))));
+	}
+};
+
+// share a common page element between page objects... 
+function SearchFilter() {
+	this.everything = function() {
+		_click(_link("Everything", _in(_div("leftnav"))));
+	}
+	this.images = function() {
+		_click(_link("Images", _in(_div("leftnav"))));
+	}
+};
+
+
+// test...
+GoogleHome.visit();
+GoogleHome.searchFor("javascript page object pattern");
+
+GoogleResults.getFirstResult();
+GoogleResults.$filterBy.images();
+
