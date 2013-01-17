@@ -21,5 +21,8 @@ CONFIG:
 git config -l
 git config remote.origin.url git@github.com:qualityshepherd/sahi-examples.git
 
+SSH:
+https://gist.github.com/2351996
+
 MORE INFO:
 http://git.or.cz/course/svn.html
