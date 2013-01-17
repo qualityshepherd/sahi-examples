@@ -1,0 +1,15 @@
+/*
+	0001.delete.random.email.from.indbox.and.confirm.deletion.sah	
+*/
+_include("functions.sah");
+var $myTrashMailAccountName = "trash";
+
+_navigateTo("http://www.mytrashmail.com");
+checkEmailAccount($myTrashMailAccountName);
+
+$emailURL = clickRandomEmailLink();
+deleteEmail();
+
+_navigateTo($emailURL);
+
+_assertExists(_span(/This message has been deleted.*/));
