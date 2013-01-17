@@ -1,17 +1,7 @@
-Git Basics... 
+Sahi Examples
 
-CHECKOUT:
-git clone git@github.com:qualityshepherd/sahi-example.git sahi-example/
+These are various example scripts I've created to illustrate Sahi's functionaliy...
 
-COMMIT:
-git add <filename or *>
-git commit -m "Checking comment..."
+Most of these are on display @ http://qualityshepherd.com
 
-OR to get changes:
-git commit -m "Refactor to simplify" -a
 
-INFO:
-http://media.pragprog.com/titles/tsgit/chap-005-extract.html 
-
-STATUS:
-git status
