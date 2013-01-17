@@ -1,7 +1,11 @@
-Sahi Examples
+SAHI TEST EXAMPLES
 
-These are various example scripts I've created to illustrate Sahi's functionaliy...
+Sahi is a fantastic test automation tool similar to Selenium or Watir. You can download the open source version (fully functional) at http://sahi.co.in
 
-Most of these are on display @ http://qualityshepherd.com
+These are various example tests/scripts I've created to illustrate some of Sahi's functionaliy...
+
+Most of these are on display @ http://qualityshepherd.com 
+
+
 
 
