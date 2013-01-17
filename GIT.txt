@@ -4,7 +4,8 @@ CHECKOUT:
 git clone git@github.com:qualityshepherd/sahi-example.git sahi-example/
 
 COMMIT:
-git add <filename or *>
+git init
+git add <filename or .>
 git commit -m "Checking comment..."
 
 OR to get changes:
